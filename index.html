@@ -1,0 +1,155 @@
+<!DOCTYPE html5>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Notifications page</title>
+  </head>
+
+  <body>
+    <div class="root">
+      <div class="root_inner">
+        <main class="page">
+          <header class="notifications">
+            <div class="left">
+              <h1>Notifications</h1>
+              <p id="unread"></p>
+            </div>
+            <p id="mark">Mark all as read</p>
+          </header>
+          <ul class="notifications">
+            <li class="notification new">
+              <img
+                src="/assets/images/avatar-mark-webber.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <p>
+                  <span class="user">Mark Webber</span>
+                  <span class="empty">  </span>reacted to your recent post<span class="empty">  </span>
+                  <span class="link">My first tournament today!</span>
+                  <span class="new"></span>
+                </p>
+                <p>1m ago</p>
+              </div>
+            </li>
+            <li class="notification new">
+              <img
+                src="/assets/images/avatar-angela-gray.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <p>
+                  <span class="user">Angela Gray </span><span class="empty">  </span> followed you
+                  <span class="new"></span>
+                </p>
+                <p>5m ago</p>
+              </div>
+            </li>
+            <li class="notification new">
+              <img
+                src="/assets/images/avatar-jacob-thompson.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <p>
+                  <span class="user">Jacob Thompson </span><span class="empty">  </span> has joined your
+                  group<span class="empty">  </span> <span class="link">Chess Club</span>
+                  <span class="new"></span>
+                </p>
+                <p>1 day ago</p>
+              </div>
+            </li>
+            <li class="notification message">
+              <img
+                src="/assets/images/avatar-rizky-hasanuddin.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <p>
+                  <span class="user">Rizky Hasanuddin </span><span class="empty">  </span> sent you a private
+                  message <span class="new"></span>
+                </p>
+                <p>5 days ago</p>
+                <p class="message">
+                  Hello, thanks for setting up the Chess Club. I've been a member
+                  for a few weeks now and I'm already having lots of fun and
+                  improving my game
+                </p>
+              </div>
+            </li>
+            
+            <li class="notification comment">
+              <img
+                src="/assets/images/avatar-kimberly-smith.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <div>
+                  <p>
+                    <span class="user">Kimberly Smith</span><span class="empty">  </span> commented on your
+                    picture <span class="new"></span>
+                  </p>
+                  <p>1 week ago</p>
+                </div>
+                <img src="/assets/images/image-chess.webp" alt="imagePost" />
+              </div>
+            </li>
+            <li class="notification">
+              <img
+                src="/assets/images/avatar-nathan-peterson.webp"
+                alt="profileImg"
+              />
+              <div class="info">
+                <p>
+                  <span class="user">Nathan Peterson</span><span class="empty">  </span> reacted to your
+                  recent post<span class="empty">  </span>
+                  <span class="link"
+                    >5 end-game strategies to increase your win rate</span
+                  >
+                  <span class="new"></span>
+                </p>
+                <p>2 week ago</p>
+              </div>
+            </li>
+            <li class="notification">
+              <img src="/assets/images/avatar-anna-kim.webp" alt="profileImg" />
+              <div class="info">
+                <p>
+                  <span class="user">Anna Kim</span><span class="empty">  </span> left the group
+                  <span class="link">Chess Club</span><span class="empty">  </span> <span class="new"></span>
+                </p>
+                <p>2 weeks ago</p>
+              </div>
+            </li>
+          </ul>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("unread").textContent = document
+        .querySelectorAll("li.notification.new")
+        .length.toString();
+
+      document.getElementById("mark").addEventListener("click", (event) => {
+        document
+          .querySelectorAll("li.notification.new")
+          .forEach((e) => e.classList.remove("new"));
+        document.getElementById("unread").textContent = document
+          .querySelectorAll("li.notification.new")
+          .length.toString();
+      });
+    </script>
+  </body>
+</html>
